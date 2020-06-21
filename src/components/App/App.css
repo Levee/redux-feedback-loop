@@ -29,7 +29,14 @@ body {
   cursor: pointer;
 }
 
-.bi-shield-lock:hover, .bi-arrow-counterclockwise:hover {
+.bi-box-arrow-left {
+  position: fixed;
+  right: 2.5rem;
+  bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.bi-shield-lock:hover, .bi-arrow-counterclockwise:hover, .bi-box-arrow-left:hover {
   fill: #aaa;
 }
 

@@ -6,6 +6,25 @@ import registerServiceWorker from './registerServiceWorker';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
+import { ThemeProvider } from '@material-ui/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
+import purple from '@material-ui/core/colors/purple';
+import green from '@material-ui/core/colors/green';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: purple[500],
+    },
+    secondary: {
+      main: green[500],
+      contrastText: '#fff'
+    },
+  },
+});
+
+console.log(theme)
+
 const feelingReducer = (state = 0, action) => {
   let newState = state;
   if (action.type === 'GET_FEELING') {
@@ -74,6 +93,8 @@ const storeInstance = createStore(
 
 ReactDOM.render(
   <Provider store={storeInstance}>
-    <App />
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </Provider>, document.getElementById('root'));
 registerServiceWorker();

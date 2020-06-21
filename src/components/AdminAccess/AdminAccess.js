@@ -6,7 +6,7 @@ class AdminAccess extends Component {
   render() {
     return (
       <>
-        { this.props.location.pathname === '/' ?
+        {this.props.location.pathname === '/' ?
         <button style={{ all: 'unset' }} onClick={() => this.props.history.push('/admin')}>
           <svg className="bi bi-shield-lock" width="1.5rem" height="1.5rem"
             viewBox="0 0 16 16" fill="#444" xmlns="http://www.w3.org/2000/svg">
@@ -26,6 +26,35 @@ class AdminAccess extends Component {
               <path fillRule="evenodd" d="M7.854.146a.5.5 0 0 0-.708 0l-2.5 2.5a.5.5 0 0 0 0 .708l2.5 2.5a.5.5 0 1 0 .708-.708L5.707 3 7.854.854a.5.5 0 0 0 0-.708z" />
             </svg>
         </button> }
+        {this.props.location.pathname === '/' ? <></> : <button style={{ all: 'unset' }} onClick={() => {
+          const { history } = this.props;
+          switch (this.props.location.pathname){
+            case '/feeling':
+              history.push('/');
+              break;
+            case '/understanding':
+              history.push('/feeling');
+              break;
+            case '/support':
+              history.push('/understanding');
+              break;
+            case '/comments':
+              history.push('/support');
+              break;
+            case '/review':
+              history.push('/comments');
+              break;
+            default:
+              console.log('Cannot go back any further');
+          }
+        }}>
+          <svg className="bi bi-box-arrow-left" width="1.5rem" height="1.5rem"
+            viewBox="0 0 16 16" fill="#444" xmlns="http://www.w3.org/2000/svg">
+            <path fillRule="evenodd" d="M4.354 11.354a.5.5 0 0 0 0-.708L1.707 8l2.647-2.646a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708 0z" />
+            <path fillRule="evenodd" d="M11.5 8a.5.5 0 0 0-.5-.5H2a.5.5 0 0 0 0 1h9a.5.5 0 0 0 .5-.5z" />
+            <path fillRule="evenodd" d="M14 13.5a1.5 1.5 0 0 0 1.5-1.5V4A1.5 1.5 0 0 0 14 2.5H7A1.5 1.5 0 0 0 5.5 4v1.5a.5.5 0 0 0 1 0V4a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5H7a.5.5 0 0 1-.5-.5v-1.5a.5.5 0 0 0-1 0V12A1.5 1.5 0 0 0 7 13.5h7z" />
+          </svg>
+        </button>}
       </>
     )
   }
