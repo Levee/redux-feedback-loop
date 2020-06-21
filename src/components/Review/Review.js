@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Review extends Component {
   render() {
@@ -10,4 +11,13 @@ class Review extends Component {
   }
 }
 
-export default Review;
+const mapStateToProps = (state) => {
+  return {
+    feeling: state.feelingReducer,
+    understanding: state.understandingReducer,
+    support: state.supportReducer,
+    comments: state.commentsReducer
+  }
+}
+
+export default connect(mapStateToProps)(Review);
