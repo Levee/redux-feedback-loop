@@ -22,7 +22,6 @@ const Admin = () => {
   const classes = useStyles();
   return (
     <>
-      <p className={classes.para}>Admin</p>
       <AdminTable />
     </>
   )

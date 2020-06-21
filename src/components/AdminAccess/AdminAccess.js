@@ -26,7 +26,7 @@ class AdminAccess extends Component {
               <path fillRule="evenodd" d="M7.854.146a.5.5 0 0 0-.708 0l-2.5 2.5a.5.5 0 0 0 0 .708l2.5 2.5a.5.5 0 1 0 .708-.708L5.707 3 7.854.854a.5.5 0 0 0 0-.708z" />
             </svg>
         </button> }
-        {this.props.location.pathname === '/' ? <></> : <button style={{ all: 'unset' }} onClick={() => {
+        {this.props.location.pathname === '/' ? <></> : (this.props.location.pathname === '/admin' ? <></> : <button style={{ all: 'unset' }} onClick={() => {
           const { history } = this.props;
           switch (this.props.location.pathname){
             case '/feeling':
@@ -54,7 +54,7 @@ class AdminAccess extends Component {
             <path fillRule="evenodd" d="M11.5 8a.5.5 0 0 0-.5-.5H2a.5.5 0 0 0 0 1h9a.5.5 0 0 0 .5-.5z" />
             <path fillRule="evenodd" d="M14 13.5a1.5 1.5 0 0 0 1.5-1.5V4A1.5 1.5 0 0 0 14 2.5H7A1.5 1.5 0 0 0 5.5 4v1.5a.5.5 0 0 0 1 0V4a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5H7a.5.5 0 0 1-.5-.5v-1.5a.5.5 0 0 0-1 0V12A1.5 1.5 0 0 0 7 13.5h7z" />
           </svg>
-        </button>}
+        </button>)}
       </>
     )
   }
