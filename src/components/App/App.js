@@ -7,6 +7,8 @@ import Understanding from '../Understanding/Understanding.js';
 import Support from '../Support/Support.js';
 import Comments from '../Comments/Comments.js';
 import Review from '../Review/Review.js';
+import AdminAccess from '../AdminAccess/AdminAccess';
+import Admin from '../Admin/Admin';
 
 class App extends Component {
   render() {
@@ -17,12 +19,14 @@ class App extends Component {
         </header>
         <br/>
         <Router>
+          <AdminAccess />
           <Route exact path="/" component={Start} />
           <Route exact path="/feeling" component={Feeling} />
           <Route exact path="/understanding" component={Understanding} />
           <Route exact path="/support" component={Support} />
           <Route exact path="/comments" component={Comments} />
           <Route exact path="/review" component={Review} />
+          <Route exact path="/admin" component={Admin} />
         </Router>
       </div>
     );
