@@ -26,7 +26,8 @@ class Support extends Component {
 
   render() {
     return (
-      <>
+      <> 
+        <h3>How much did you feel supported? 5 being very supported and 1 being not at all supported.</h3>
         <form onSubmit={this.sendSupport}>
           <label>Support Level</label>
           <select value={this.state.support} onChange={this.setSupport}>

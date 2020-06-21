@@ -4,23 +4,73 @@
 
 .App-header {
   background-color: #033076;
-  min-height: 70px;
   padding: 20px;
   color: white;
+  box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.75);
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 2rem;
+  margin: 0;
 }
 
 .App-intro {
   font-size: large;
 }
 
+body {
+  font-family: 'Roboto Slab', serif;
+}
+
 select {
   margin: 0.5rem;
   padding: 0.5rem;
   border-radius: 10px;
+  font-size: large;
+  outline: none;
+  cursor: pointer;
+}
+
+input {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  font-size: large;
+  outline: none;
+}
+
+label {
+  font-size: large;
+}
+
+textarea {
+  margin: 0.5rem auto;
+  padding: 0.5rem;
+  width: 88.5%;
+  min-height: 75px;
+  height: auto;
+  border: 2px inset grey;
+  border-radius: 10px;
+  resize: vertical;
+  outline: none;
+}
+
+textarea:focus, input:focus {
+  border: 2px inset plum;
+}
+
+button:focus {
+  border: 2px outset plum;
+}
+
+#comments {
+  margin: initial auto;
+  width: fit-content;
+}
+
+.success {
+  color: green;
+  font-size: large;
 }
 
 .button {
@@ -30,8 +80,9 @@ select {
   padding: 0.5rem;
   color: white;
   cursor: pointer;
+  border: 2px outset grey;
   border-radius: 10px;
-  height: 35px;
+  font-size: large;
 }
 
 .button:hover {
@@ -39,5 +90,5 @@ select {
 }
 
 .button:active {
-  border: 2px inset darkblue;
+  border: 2px inset grey;
 }

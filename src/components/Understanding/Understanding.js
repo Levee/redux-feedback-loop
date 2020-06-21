@@ -27,6 +27,7 @@ class Understanding extends Component {
   render() {
     return (
       <>
+        <h3>How well did you understand the content? 5 being very well and 1 being not at all.</h3>
         <form onSubmit={this.sendUnderstanding}>
           <label>Understanding Level</label>
           <select value={this.state.understanding} onChange={this.setUnderstanding}>

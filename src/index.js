@@ -11,6 +11,9 @@ const feelingReducer = (state = 0, action) => {
   if (action.type === 'GET_FEELING') {
     newState = action.payload;
   }
+  if (action.type === 'RESET_STATE') {
+    newState = 0;
+  }
   return newState;
 }
 
@@ -18,6 +21,9 @@ const understandingReducer = (state = 0, action) => {
   let newState = state;
   if (action.type === 'GET_UNDERSTANDING') {
     newState = action.payload;
+  }
+  if (action.type === 'RESET_STATE') {
+    newState = 0;
   }
   return newState;
 }
@@ -27,6 +33,9 @@ const supportReducer = (state = 0, action) => {
   if (action.type === 'GET_SUPPORT') {
     newState = action.payload;
   }
+  if (action.type === 'RESET_STATE') {
+    newState = 0;
+  }
   return newState;
 }
 
@@ -35,6 +44,9 @@ const commentsReducer = (state = '', action) => {
   if (action.type === 'GET_COMMENTS') {
     newState = action.payload;
   }
+  if (action.type === 'RESET_STATE') {
+    newState = '';
+  }
   return newState;
 }
 
@@ -42,6 +54,9 @@ const nameReducer = (state = '', action) => {
   let newState = state;
   if (action.type === 'GET_NAME') {
     newState = action.payload;
+  }
+  if (action.type === 'RESET_STATE') {
+    newState = '';
   }
   return newState;
 }

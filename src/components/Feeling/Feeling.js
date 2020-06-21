@@ -27,6 +27,7 @@ class Feeling extends Component {
   render() {
     return (
       <>
+        <h3>How did you feel? 5 being very positive and 1 being very negative.</h3>
         <form onSubmit={this.sendFeeling}>
           <label>Feeling Level</label>
           <select value={this.state.feeling} onChange={this.setFeeling}>

@@ -28,15 +28,16 @@ class Comments extends Component {
 
   render() {
     return (
-      <>
+      <div id="comments">
         <form onSubmit={this.sendComments}>
-          <label>Comments</label>
+          <h3>Leave us a comment!</h3>
+          <hr />
           <textarea onChange={this.setComments} placeholder="Enter comment or leave blank..." />
           <br />
           <input type="text" placeholder="Name..." onChange={this.setName} />
           <input className="button" type="submit" value="Submit" />
         </form>
-      </>
+      </div>
     )
   }
 }
