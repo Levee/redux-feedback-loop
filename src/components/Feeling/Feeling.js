@@ -20,7 +20,7 @@ class Feeling extends Component {
     }
     event.preventDefault();
     const { dispatch } = this.props;
-    dispatch({ type: 'GET_FEELING', payload: this.state.feeling });
+    dispatch({ type: 'GET_FEELING', payload: Number(this.state.feeling) });
     this.props.history.push('/understanding');
   }
 
@@ -28,15 +28,16 @@ class Feeling extends Component {
     return (
       <>
         <form onSubmit={this.sendFeeling}>
+          <label>Feeling Level</label>
           <select value={this.state.feeling} onChange={this.setFeeling}>
-            <option value={0} disabled>Feeling</option>
+            <option value={0} disabled>Choose</option>
             <option value={1}>1</option>
             <option value={2}>2</option>
             <option value={3}>3</option>
             <option value={4}>4</option>
             <option value={5}>5</option>
           </select>
-          <input type="submit" value="Submit" />
+          <input className="button" type="submit" value="Submit" />
         </form>
       </>
     )
