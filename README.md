@@ -1,9 +1,7 @@
-# Project Name
+# Redux Feedback Loop
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+EDA Feedback Form
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
-
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+This project aims to recreate a feedback form similar to that of EDA's. It contains four input pages in which you provide your level of feeling, understanding, support, and also any comments you may have to add. Upon pressing submit on the final review page, a post request will be sent to the server, where the server will then take that information and make a query to a database to save the information you provided.
