@@ -12,15 +12,18 @@ class Comments extends Component {
   setComments = (event) => {
     this.setState({ comments: event.target.value });
   }
-
+  // get name and set local state
   setName = (event) => {
     this.setState({ name: event.target.value });
   }
+
+  // no input validation, since neither comments nor name are required
 
   // send comments level to global state
   sendComments = (event) => {
     event.preventDefault();
     const { dispatch } = this.props;
+    // dispatch comments to global state ( also dispatches name for future features )
     dispatch({ type: 'GET_COMMENTS', payload: this.state.comments });
     dispatch({ type: 'GET_NAME', payload: this.state.name});
     this.props.history.push('/review');

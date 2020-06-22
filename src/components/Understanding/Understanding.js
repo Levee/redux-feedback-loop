@@ -14,12 +14,14 @@ class Understanding extends Component {
 
   // send understanding level to global state
   sendUnderstanding = (event) => {
+    // input validation; checks if local state is falsy
     if (!this.state.understanding) {
       alert('Error! Input cannot be empty.');
       return;
     }
     event.preventDefault();
     const { dispatch } = this.props;
+    // dispatch understanding to global state
     dispatch({ type: 'GET_UNDERSTANDING', payload: Number(this.state.understanding) });
     this.props.history.push('/support');
   }

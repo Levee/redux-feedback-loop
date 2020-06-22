@@ -10,11 +10,13 @@ class Review extends Component {
 
   sendFeedback = () => {
     const { feeling, understanding, support, comments, dispatch } = this.props;
+    // if you try submitting on the review page but skipped the inputs, this will alert you and push you to the home page
     if(!feeling || !understanding || !support){
       alert('Error! You skipped a step or reloaded the page. Please start over. You will now be redirected!');
       this.props.history.push('/');
       return;
     }
+    // if no states were found to be falsy, this sends an axios post request to the server with an object of the global states
     this.setState({ submitted: true });
     axios.post('/feedback', {
       feeling,
@@ -64,7 +66,7 @@ class Review extends Component {
     )
   }
 }
-
+// maps global state to props so you can reference it here
 const mapStateToProps = (state) => {
   return {
     feeling: state.feelingReducer,

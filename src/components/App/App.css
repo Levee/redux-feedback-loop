@@ -111,3 +111,28 @@ button:focus {
 .button:active {
   border: 2px inset grey;
 }
+
+table {
+  table-layout: fixed;
+  margin: initial auto;
+  width: 50%;
+}
+
+td {
+  outline: 2px solid lightgrey;
+  padding: 0.5rem;
+  vertical-align: top;
+}
+
+td:first-child {
+  text-align: left;
+  width: 40%;
+}
+
+td:last-child {
+  width: 60%;
+}
+
+tr:last-child td:last-child {
+  text-align: left;
+}

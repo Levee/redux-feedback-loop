@@ -6,25 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
-import { ThemeProvider } from '@material-ui/styles';
-import { createMuiTheme } from '@material-ui/core/styles';
-import purple from '@material-ui/core/colors/purple';
-import green from '@material-ui/core/colors/green';
-
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: purple[500],
-    },
-    secondary: {
-      main: green[500],
-      contrastText: '#fff'
-    },
-  },
-});
-
-console.log(theme)
-
+// stores input from the feeling component
 const feelingReducer = (state = 0, action) => {
   let newState = state;
   if (action.type === 'GET_FEELING') {
@@ -35,7 +17,7 @@ const feelingReducer = (state = 0, action) => {
   }
   return newState;
 }
-
+// stores input from the understanding component
 const understandingReducer = (state = 0, action) => {
   let newState = state;
   if (action.type === 'GET_UNDERSTANDING') {
@@ -46,7 +28,7 @@ const understandingReducer = (state = 0, action) => {
   }
   return newState;
 }
-
+// stores input from the support component
 const supportReducer = (state = 0, action) => {
   let newState = state;
   if (action.type === 'GET_SUPPORT') {
@@ -57,7 +39,7 @@ const supportReducer = (state = 0, action) => {
   }
   return newState;
 }
-
+// stores input from the comments component
 const commentsReducer = (state = '', action) => {
   let newState = state;
   if (action.type === 'GET_COMMENTS') {
@@ -68,7 +50,7 @@ const commentsReducer = (state = '', action) => {
   }
   return newState;
 }
-
+// allows for expansion if I wanted to add a name
 const nameReducer = (state = '', action) => {
   let newState = state;
   if (action.type === 'GET_NAME') {
@@ -79,7 +61,7 @@ const nameReducer = (state = '', action) => {
   }
   return newState;
 }
-
+// creates the store
 const storeInstance = createStore(
   combineReducers({
     nameReducer,
@@ -93,8 +75,6 @@ const storeInstance = createStore(
 
 ReactDOM.render(
   <Provider store={storeInstance}>
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
+    <App />
   </Provider>, document.getElementById('root'));
 registerServiceWorker();

@@ -18,6 +18,7 @@ class App extends Component {
           <h1 className="App-title">Feedback!</h1>
         </header>
         <br/>
+        {/* creates a router that contains all routes */}
         <Router>
           <AdminAccess />
           <Route exact path="/" component={Start} />

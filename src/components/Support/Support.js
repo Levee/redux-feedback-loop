@@ -14,12 +14,14 @@ class Support extends Component {
 
   // send support level to global state
   sendSupport = (event) => {
+    // input validation; checks if local state is falsy
     if (!this.state.support) {
       alert('Error! Input cannot be empty.');
       return;
     }
     event.preventDefault();
     const { dispatch } = this.props;
+    // dispatch support to global state
     dispatch({ type: 'GET_SUPPORT', payload: Number(this.state.support) });
     this.props.history.push('/comments');
   }

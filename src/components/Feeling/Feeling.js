@@ -14,12 +14,14 @@ class Feeling extends Component {
 
   // send feeling level to global state
   sendFeeling = (event) => {
+    // input validation; checks if state is falsy
     if(!this.state.feeling){
       alert('Error! Input cannot be empty.');
       return;
     }
     event.preventDefault();
     const { dispatch } = this.props;
+    // dispatch feeling to global state
     dispatch({ type: 'GET_FEELING', payload: Number(this.state.feeling) });
     this.props.history.push('/understanding');
   }

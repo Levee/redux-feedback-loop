@@ -6,6 +6,7 @@ class AdminAccess extends Component {
   render() {
     return (
       <>
+        {/* conditionally render the admin button if you're on the home page */}
         {this.props.location.pathname === '/' ?
         <button style={{ all: 'unset' }} onClick={() => this.props.history.push('/admin')}>
           <svg className="bi bi-shield-lock" width="1.5rem" height="1.5rem"
@@ -15,6 +16,7 @@ class AdminAccess extends Component {
             <path d="M7.411 8.034a.5.5 0 0 1 .493-.417h.156a.5.5 0 0 1 .492.414l.347 2a.5.5 0 0 1-.493.585h-.835a.5.5 0 0 1-.493-.582l.333-2z" />
           </svg>
         </button>
+        // conditionally render the reset button if you're NOT on the home page
         : <button style={{ all: 'unset' }} onClick={() => {
             const { history, dispatch } = this.props;
             history.push('/');
@@ -26,6 +28,7 @@ class AdminAccess extends Component {
               <path fillRule="evenodd" d="M7.854.146a.5.5 0 0 0-.708 0l-2.5 2.5a.5.5 0 0 0 0 .708l2.5 2.5a.5.5 0 1 0 .708-.708L5.707 3 7.854.854a.5.5 0 0 0 0-.708z" />
             </svg>
         </button> }
+        {/* conditionally render back button; switch statement determines which page to return to when the button is pressed */}
         {this.props.location.pathname === '/' ? <></> : (this.props.location.pathname === '/admin' ? <></> : <button style={{ all: 'unset' }} onClick={() => {
           const { history } = this.props;
           switch (this.props.location.pathname){
